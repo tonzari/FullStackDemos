@@ -1,2 +1,3 @@
-# CSharpBootcamp_Jan2023_AH
+# Full Stack C# .NET Class Repository
+
 Your instructors will share code with you here.
