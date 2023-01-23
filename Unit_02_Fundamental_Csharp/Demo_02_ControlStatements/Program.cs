@@ -1,19 +1,19 @@
 ﻿// Basic If statement demo
 
-//Console.WriteLine("Program begins...");
+Console.WriteLine("Program begins...");
 
-//bool isComplete = false;
+bool isComplete = false;
 
-//if (isComplete == true)
-//{
-//    Console.WriteLine("IF BLOCK ENTERED!");
-//}
-//else
-//{
-//    Console.WriteLine("ELSE BLOCK ENTERED!");
-//}
+if (isComplete == true)
+{
+    Console.WriteLine("IF BLOCK ENTERED!");
+}
+else
+{
+    Console.WriteLine("ELSE BLOCK ENTERED!");
+}
 
-//Console.WriteLine("Program ends.");
+Console.WriteLine("Program ends.");
 
 string petName = "Luke";
 string petType = "Dog";
