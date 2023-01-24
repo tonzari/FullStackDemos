@@ -16,6 +16,7 @@ Console.WriteLine(stringLength);*/
 char[] myCharArray = { 'B', 'r', 'i', 'a', 'n', 'n', 'a' };
 string[] myStringArray = { "Jim", "Becca", "Stefania", "Noor", "Enrique" };
 
+// We haven't covered arrays or lists YET, but we will make use of them now to demo the string.Join method below
 List<string> foods = new List<string>()
 {
  "Sushi",
@@ -44,15 +45,23 @@ Console.WriteLine("");
  * 
  * String Methods
  * 
+ * 
+ * 
  */
 
 // Concat
 string concatExample = string.Concat("first string", myString);
 Console.WriteLine(concatExample);
 
+
+
+
 // Join
 string joinExample = string.Join(", ", foods); // you can pass in a list or an array. the first parameter is the 'separator'
 Console.WriteLine(joinExample);
+
+
+
 
 // Compare and Equals
 
@@ -66,6 +75,9 @@ myString = "dog";
 bool equalsResult = myString.Equals("DOG");
 Console.WriteLine("Equal result: " + equalsResult);
 
+
+
+
 // IndexOf
 int indexOfDummy = lorem.IndexOf("dummy");
 Console.WriteLine("Position: " + indexOfDummy);
@@ -73,9 +85,15 @@ Console.WriteLine("Position: " + indexOfDummy);
 int notFound = lorem.IndexOf("cxrcxr");
 Console.WriteLine("Position: " + notFound);
 
+
+
+
 // LastIndexOf
 int lastIndexOfDummy = lorem.LastIndexOf("dummy");
 Console.WriteLine("Position: " + lastIndexOfDummy);
+
+
+
 
 // EndsWith
 bool endsWithResult = myString.EndsWith("og");
@@ -86,6 +104,9 @@ CultureInfo cultureInfo = CultureInfo.CurrentCulture; // a cultureinfo is needed
 bool startsWithResult = myString.StartsWith("D", true, cultureInfo);
 Console.WriteLine("StartsWith result: " + startsWithResult);
 
+
+
+
 // Replace
 string replaceResult = myString.Replace('d', 'b');
 Console.WriteLine(replaceResult);
@@ -94,16 +115,26 @@ string exampleSentence = "FYI, Sometimes it rains in April";
 string replaceWordresult = exampleSentence.Replace("rains", "snows");
 Console.WriteLine(replaceWordresult);
 
+
+
+
 // Split
 string[] splitResult = exampleSentence.Split(' ');
+
 for (int i = 0; i < splitResult.Length; i++)
 {
     Console.WriteLine(splitResult[i]);
 }
 
+
+
+
 // Substring
 string substringResult = lorem.Substring(indexOfDummy);
 Console.WriteLine(substringResult);
+
+
+
 
 // ToUpper / ToLower
 string toLowerResult = exampleSentence.ToLower();
@@ -112,8 +143,12 @@ Console.WriteLine(toLowerResult);
 string toUpperResult = exampleSentence.ToUpper();
 Console.WriteLine(toUpperResult);
 
+// not a string method, but a method that exists on CultureInfo. Demoing now becaue it is relevant.
 string titleCaseResult = cultureInfo.TextInfo.ToTitleCase(exampleSentence); // Converts a string to Title Case - except for words that are ALL UPPERCASE (which are considered acronyms).
 Console.WriteLine(titleCaseResult);
+
+
+
 
 // Trim
 string trimExample = "   Hello, my good friend   ";
@@ -121,8 +156,15 @@ Console.WriteLine(trimExample + "!");
 string trimResult = trimExample.Trim();
 Console.WriteLine(trimResult + "!");
 
+
+
+
 /*
  * 
+ * 
+ * 
  * StringBuilder
+ * 
+ * 
  * 
  */
