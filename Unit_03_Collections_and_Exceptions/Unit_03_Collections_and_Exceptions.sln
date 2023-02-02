@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_01_Arrays", "Demo_01_Arrays\Demo_01_Arrays.csproj", "{62AE1DD8-D278-4DBE-AA32-612DD859826F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_01_Arrays", "Demo_01_Arrays\Demo_01_Arrays.csproj", "{62AE1DD8-D278-4DBE-AA32-612DD859826F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopsInLoopsDemo", "LoopsInLoopsDemo\LoopsInLoopsDemo.csproj", "{F2D73568-8FA8-43DD-BB53-C5A06010AE86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoopsInLoopsDemo", "LoopsInLoopsDemo\LoopsInLoopsDemo.csproj", "{F2D73568-8FA8-43DD-BB53-C5A06010AE86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_02_Lists", "Demo_02_Lists\Demo_02_Lists.csproj", "{2FBC5442-3630-48A2-B6B2-DC134F984945}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_02_Lists", "Demo_02_Lists\Demo_02_Lists.csproj", "{2FBC5442-3630-48A2-B6B2-DC134F984945}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_03_Dictionaries", "Demo_03_Dictionaries\Demo_03_Dictionaries.csproj", "{5C1372D1-EDCC-4589-9912-4ABAC16E473B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_04_Linq", "Demo_04_Linq\Demo_04_Linq.csproj", "{CA636F40-B897-46B5-B788-F9D9BB1BEC28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{2FBC5442-3630-48A2-B6B2-DC134F984945}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FBC5442-3630-48A2-B6B2-DC134F984945}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FBC5442-3630-48A2-B6B2-DC134F984945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1372D1-EDCC-4589-9912-4ABAC16E473B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1372D1-EDCC-4589-9912-4ABAC16E473B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1372D1-EDCC-4589-9912-4ABAC16E473B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1372D1-EDCC-4589-9912-4ABAC16E473B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA636F40-B897-46B5-B788-F9D9BB1BEC28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA636F40-B897-46B5-B788-F9D9BB1BEC28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA636F40-B897-46B5-B788-F9D9BB1BEC28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA636F40-B897-46B5-B788-F9D9BB1BEC28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
