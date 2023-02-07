@@ -91,12 +91,11 @@ foreach (var employee in employeeDatabase)
 
 // Asma's question: Can you make a dictionary of type <string, decimal>? Yes!
 
-Dictionary<string, decimal> keyValuePairs = new Dictionary<string, decimal>();
-keyValuePairs.Add("Chocolate", 9.99m);
-keyValuePairs.Add("Apple", 0.25m);
-keyValuePairs.Add("Guava", 2.99m);
+Dictionary<string, decimal> foodPrices = new Dictionary<string, decimal>();
+foodPrices.Add("Chocolate", 9.99m);
+foodPrices.Add("Apple", 0.25m);
+foodPrices.Add("Guava", 2.99m);
 
-decimal total = keyValuePairs["Apple"] + keyValuePairs["Guava"];
+decimal total = foodPrices["Apple"] + foodPrices["Guava"];
 
 Console.WriteLine(total); 
-
