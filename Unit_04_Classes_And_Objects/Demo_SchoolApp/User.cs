@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Demo_SchoolApp
 {
-    public class User
+    public abstract class User
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAddress { get; set; }
-        public string Password { get; set; }
+        public abstract string FirstName { get; set; }
+        public abstract string LastName { get; set; }
+        public abstract string EmailAddress { get; set; }
+        public abstract string Password { get; set; }
     }
 }

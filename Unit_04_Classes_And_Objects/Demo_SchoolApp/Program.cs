@@ -1,5 +1,7 @@
 ﻿
 
+using Demo_SchoolApp;
+
 Console.WriteLine("Welcome to the School Online System! Please login in to continue.");
 
 do
@@ -17,9 +19,15 @@ do
     }
     else
     {
-        Console.WriteLine("Sorry");
+        Console.WriteLine("Sorry, we couldn't log you in.");
     }
 
     Console.WriteLine("Would you like to restart the App? [y]");
 
 } while (Console.ReadLine() == "y");
+
+// DUMMY DATA
+
+Student s1 = new Student();
+s1.CurrentStatus = RegistrationStatus.Accepted;
+

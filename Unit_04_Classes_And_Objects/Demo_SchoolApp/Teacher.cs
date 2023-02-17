@@ -9,5 +9,9 @@ namespace Demo_SchoolApp
     public class Teacher : User
     {
         public decimal Salary { get; set; }
+        public override string FirstName { get; set; }
+        public override string LastName { get; set; }
+        public override string EmailAddress { get; set; }
+        public override string Password { get; set; }
     }
 }
