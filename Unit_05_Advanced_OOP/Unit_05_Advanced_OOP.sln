@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_01_File_IO_Simple", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_02_File_IO_Deserialization", "Demo_02_File_IO_Deserialization\Demo_02_File_IO_Deserialization.csproj", "{DD8378FD-520E-47A8-8BE7-36835996F511}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_Git_Branching", "Demo_Git_Branching\Demo_Git_Branching.csproj", "{53D437BB-BE1B-4560-9F70-94BAADD5A684}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DD8378FD-520E-47A8-8BE7-36835996F511}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD8378FD-520E-47A8-8BE7-36835996F511}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD8378FD-520E-47A8-8BE7-36835996F511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D437BB-BE1B-4560-9F70-94BAADD5A684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D437BB-BE1B-4560-9F70-94BAADD5A684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D437BB-BE1B-4560-9F70-94BAADD5A684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D437BB-BE1B-4560-9F70-94BAADD5A684}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
