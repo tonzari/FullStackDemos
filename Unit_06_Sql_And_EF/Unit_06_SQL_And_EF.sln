@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_ConsoleWithEF", "Demo_ConsoleWithEF\Demo_ConsoleWithEF.csproj", "{1245DEEC-43AB-4F1C-BE10-FEF98371F07B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_ConsoleWithEF", "Demo_ConsoleWithEF\Demo_ConsoleWithEF.csproj", "{1245DEEC-43AB-4F1C-BE10-FEF98371F07B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo_01_SQL_Basics", "Demo_01_SQL_Basics", "{F2645B3D-FDA4-48DE-8239-5E8C1B3B705F}"
+	ProjectSection(SolutionItems) = preProject
+		Demo_01_SQL_Basics\LearningSQL.sql = Demo_01_SQL_Basics\LearningSQL.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
