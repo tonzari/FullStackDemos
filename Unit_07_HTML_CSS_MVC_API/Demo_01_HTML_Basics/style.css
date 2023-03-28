@@ -1,0 +1,43 @@
+/* this is a comment */
+
+/* To apply styles to our HTML, we have several options to target those elements
+
+    - target ALL elements of a certain type. Example: h1, p, div, etc.
+    - target classes. Example: .my-class
+    - target IDs. Example: #my-new-id
+
+*/
+
+/* Target all H1 elements. This will allow you to change *properties* of ALL h1 elements on your page*/
+h1 {
+    font-size: 40px;
+}
+
+/* Target all h2 elements. This is an example of changing the font family.
+    There are a list of font families; these are fallbacks!
+*/
+h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: limegreen;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    font-weight: 100;
+    font-style: italic;
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+/* Target by class */
+
+/* center the content wrapper */
+.site-wrapper {
+    background-color: #b8abab;
+    margin: 0 auto;
+    padding: 25px;
+    width: 600px;
+}
+
+
