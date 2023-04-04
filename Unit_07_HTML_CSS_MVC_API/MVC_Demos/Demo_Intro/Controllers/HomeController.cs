@@ -8,6 +8,7 @@ namespace Demo_Intro.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly MockDatabase _db;
+
         public HomeController(ILogger<HomeController> logger, MockDatabase mockDb)
         {
             _logger = logger;

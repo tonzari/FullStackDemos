@@ -35,8 +35,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-    // This patter will first look in the Controller folder for the name passed in...
-    // If you pass in example.com/shop ----- MVC will look inside the Controller folder for ShopController.cs
-    // If you pass in example.com/trains --- MVC will look inside the Controller folder for TrainsController.cs
+// This patter will first look in the Controller folder for the name passed in...
+// If you pass in example.com/shop ----- MVC will look inside the Controller folder for ShopController.cs
+// If you pass in example.com/trains --- MVC will look inside the Controller folder for TrainsController.cs
 
 app.Run();
