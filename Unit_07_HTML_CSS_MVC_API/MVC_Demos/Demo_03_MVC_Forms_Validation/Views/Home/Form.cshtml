@@ -1,0 +1,57 @@
+﻿@model UserInfo
+
+<form asp-controller="Home" asp-action="Form" method="post">
+
+    <div class="row form-group">
+        <label class="col-md-2 col-form-label" asp-for="FirstName"></label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" asp-for="FirstName" />
+        </div>
+
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="row form-group">
+        <label class="col-md-2 col-form-label" asp-for="LastName"></label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" asp-for="LastName" />
+        </div>
+
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="row form-group">
+        <label class="col-md-2 col-form-label" asp-for="EmailAddress"></label>
+        <div class="col-md-10">
+            <input type="email" class="form-control" asp-for="EmailAddress" />
+        </div> 
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+    </div>
+
+    <div class="row form-group">
+        <label class="col-md-2 col-form-label" asp-for="Password"></label>
+        <div class="col-md-10">
+            <input type="password" class="form-control" asp-for="Password" />
+        </div>
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="row form-group">
+        <label class="col-md-2 col-form-label" asp-for="Birthday"></label>
+        <div class="col-md-10">
+            <input type="date" class="form-control" asp-for="Birthday" />
+        </div>
+        <span asp-validation-for="Birthday" class="text-danger"></span>
+    </div>
+
+
+
+    <div class="row form-group">
+        <div col="col-md-2">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </div>
+
+   @* <div asp-validation-summary="All" class="text-danger"></div>*@
+
+</form>
