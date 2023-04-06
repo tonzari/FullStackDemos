@@ -1,5 +1,9 @@
 ﻿@model UserInfo
 
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
+
 <form asp-controller="Home" asp-action="Form" method="post">
 
     <div class="row form-group">
