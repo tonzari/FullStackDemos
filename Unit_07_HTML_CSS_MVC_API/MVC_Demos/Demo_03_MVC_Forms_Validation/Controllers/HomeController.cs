@@ -26,7 +26,6 @@ namespace Demo_03_MVC_Forms_Validation.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult Form(UserInfo userInfo)
         {
             if (ModelState.IsValid)
