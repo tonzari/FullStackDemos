@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<AppUserRepository>();
 builder.Services.AddControllersWithViews();
 
 
@@ -11,7 +12,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppUserContext>(options =>
 {
     options.UseSqlServer(
-        builder.Configuration["ConnectionStrings:AppUserContextConnection"]);
+        builder.Configuration["ConnectionStrings:FromParallels"]);
 });
 
 
