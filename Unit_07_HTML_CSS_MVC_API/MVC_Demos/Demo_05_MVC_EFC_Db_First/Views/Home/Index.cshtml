@@ -1,0 +1,14 @@
+﻿@model List<Dessert>
+
+@foreach(Dessert d in Model)
+{
+    <div class="card custom-dessert-card">
+        <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+
+        <div class="card-body">
+            <h3 class="card-title">@d.Name</h3>
+            <p class="card-text">@d.Type, <em>$@d.Price</em></p>
+        </div>
+
+    </div>
+}

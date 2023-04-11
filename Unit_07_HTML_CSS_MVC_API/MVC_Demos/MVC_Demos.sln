@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_Intro", "Demo_Intro\De
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_02_MVC_Forms", "Demo_02_MVC_Forms\Demo_02_MVC_Forms.csproj", "{0494AF8C-4211-4BB1-B557-F60EB604B947}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_03_MVC_Forms_Validation", "Demo_03_MVC_Forms_Validation\Demo_03_MVC_Forms_Validation.csproj", "{40726EAB-9F45-4D2D-823E-768FC7C40797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_03_MVC_Forms_Validation", "Demo_03_MVC_Forms_Validation\Demo_03_MVC_Forms_Validation.csproj", "{40726EAB-9F45-4D2D-823E-768FC7C40797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_04_MVC_EFC", "Demo_04_MVC_EFC\Demo_04_MVC_EFC.csproj", "{28BA9931-9BBF-4E43-A727-43F7BF72329A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_04_MVC_EFC", "Demo_04_MVC_EFC\Demo_04_MVC_EFC.csproj", "{28BA9931-9BBF-4E43-A727-43F7BF72329A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_05_MVC_EFC_Db_First", "Demo_05_MVC_EFC_Db_First\Demo_05_MVC_EFC_Db_First.csproj", "{B45D6063-F0DD-437C-8F97-D784441E8770}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{28BA9931-9BBF-4E43-A727-43F7BF72329A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28BA9931-9BBF-4E43-A727-43F7BF72329A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28BA9931-9BBF-4E43-A727-43F7BF72329A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45D6063-F0DD-437C-8F97-D784441E8770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45D6063-F0DD-437C-8F97-D784441E8770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45D6063-F0DD-437C-8F97-D784441E8770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45D6063-F0DD-437C-8F97-D784441E8770}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
