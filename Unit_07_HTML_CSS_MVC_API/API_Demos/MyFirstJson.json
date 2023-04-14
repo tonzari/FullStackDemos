@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Ladybird",
+    "breed": "bloodhound",
+    "birthday": "2020-11-25",
+    "weight": 55.5,
+    "specialNeeds": {
+      "diet": "grain-free",
+      "exercise": "daily walks"
+    },
+    "vaccinated": false
+  },
+  {
+    "id": 2,
+    "name": "Santa's Little Helper",
+    "breed": "greyhound",
+    "birthday": "1990-04-12",
+    "weight": 30.2,
+    "specialNeeds": {
+      "diet": "grain-free",
+      "exercise": "doesn't exercise"
+    },
+    "vaccinated": true
+  }
+]
