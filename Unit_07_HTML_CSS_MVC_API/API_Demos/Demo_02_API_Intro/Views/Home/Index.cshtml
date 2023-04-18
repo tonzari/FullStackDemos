@@ -1,1 +1,7 @@
-﻿TO DO: Display posts
+﻿@model List<Post>
+
+@foreach(Post p in Model)
+{
+    <h1>@p.title</h1>
+    <p>@p.body</p>
+}

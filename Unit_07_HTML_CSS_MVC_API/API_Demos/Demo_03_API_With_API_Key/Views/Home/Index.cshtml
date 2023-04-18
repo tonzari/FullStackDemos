@@ -1,0 +1,16 @@
+﻿@model List<AnimalResponse>
+
+
+@if(Model != null)
+{
+    @foreach (var animal in Model)
+    {
+        <h1>@animal.name</h1>
+        <p>@animal.characteristics.habitat</p>
+    }
+}
+else
+{
+    <p>Sorry. Something went wrong. Did you add your own API key from api-ninjas.com?</p>
+    <p>@ViewBag.Exception</p>
+}
