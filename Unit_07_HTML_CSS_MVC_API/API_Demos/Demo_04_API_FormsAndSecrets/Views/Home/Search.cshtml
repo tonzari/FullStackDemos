@@ -1,0 +1,73 @@
+﻿@model Demo_04_API_FormsAndSecrets.Models.CitySearchModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search Cities</h1>
+<p>Search for cities by name, population, and coordinates.</p>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Search">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="country" class="control-label"></label>
+                <input asp-for="country" class="form-control" />
+                <span asp-validation-for="country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="min_population" class="control-label"></label>
+                <input asp-for="min_population" class="form-control" />
+                <span asp-validation-for="min_population" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="max_population" class="control-label"></label>
+                <input asp-for="max_population" class="form-control" />
+                <span asp-validation-for="max_population" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="min_lat" class="control-label"></label>
+                <input asp-for="min_lat" class="form-control" />
+                <span asp-validation-for="min_lat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="max_lat" class="control-label"></label>
+                <input asp-for="max_lat" class="form-control" />
+                <span asp-validation-for="max_lat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="min_lon" class="control-label"></label>
+                <input asp-for="min_lon" class="form-control" />
+                <span asp-validation-for="min_lon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="max_lon" class="control-label"></label>
+                <input asp-for="max_lon" class="form-control" />
+                <span asp-validation-for="max_lon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="limit" class="control-label"></label>
+                <input asp-for="limit" class="form-control" />
+                <span asp-validation-for="limit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

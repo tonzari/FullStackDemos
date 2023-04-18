@@ -1,0 +1,26 @@
+﻿@model List<City>
+
+@if(Model != null)
+{
+    <p>Connection to API successful. Below, you should see the population of Detroit.</p>
+
+    @foreach(City city in Model)
+    {
+        <p>City: @city.Name, Population: @city.Population</p>
+    }
+}
+else
+{
+    <h3>Something went wrong...</h3>
+    <p>Make sure you have added your own API key.</p>
+    <p>See the ReadMe file of this Visual Studio solution for help.</p>
+    <p><strong>Error: </strong> @ViewBag.ErrorMessage</p>
+}
+
+<h3>Demo 04 - Topics: API, Form, HttpClient, Handling sensitive API keys</h3>
+<p>This demo makes use of Api Ninja's <a href="https://api-ninjas.com/api/city">City API</a>.</p>
+<p>A form was created to allow the user to submit any search parameters they'd like. Take a look at the form here: <a asp-action="Search">Search Cities</a></p>
+<p>Notice that all the form input fields are optional, but some input fields have data validation, like the country code and the search result limit number.</p>
+<h3>Note</h3>
+<p>Make sure you have added your own API key.</p>
+<p>See the ReadMe file of this Visual Studio solution for help seteting it up.</p>

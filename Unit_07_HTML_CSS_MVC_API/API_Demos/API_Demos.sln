@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_01_Json_to_Csharp", "D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_02_API_Intro", "Demo_02_API_Intro\Demo_02_API_Intro.csproj", "{2DF2F15C-E7D0-4E72-AE33-69F829E3BB3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_03_API_With_API_Key", "Demo_03_API_With_API_Key\Demo_03_API_With_API_Key.csproj", "{E112F85E-CD23-48DD-AA7E-A718410E542C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_03_API_With_API_Key", "Demo_03_API_With_API_Key\Demo_03_API_With_API_Key.csproj", "{E112F85E-CD23-48DD-AA7E-A718410E542C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_04_API_FormsAndSecrets", "Demo_04_API_FormsAndSecrets\Demo_04_API_FormsAndSecrets.csproj", "{F6DAF073-09FC-4A1A-B339-F9ED309AB0C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{E112F85E-CD23-48DD-AA7E-A718410E542C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E112F85E-CD23-48DD-AA7E-A718410E542C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E112F85E-CD23-48DD-AA7E-A718410E542C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6DAF073-09FC-4A1A-B339-F9ED309AB0C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6DAF073-09FC-4A1A-B339-F9ED309AB0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6DAF073-09FC-4A1A-B339-F9ED309AB0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6DAF073-09FC-4A1A-B339-F9ED309AB0C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABF7DC67-1662-4623-BE5C-FC923DF038C4}
 	EndGlobalSection
 EndGlobal
