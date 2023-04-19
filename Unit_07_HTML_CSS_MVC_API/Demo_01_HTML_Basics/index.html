@@ -24,13 +24,13 @@
         - Drums
         - Synthesizers
         - Mandolins -->
-
+        <!-- 
         <p>In HTML,         spaces and returns get collapes down to one 
             
             space.</p>
         <p>However, a new p element (used for paragrpahs) will begin on a new line.</p>
         <p>What if we want to format our text the same way we typed it out above?</p>
-        
+         -->
         <div class="site-wrapper">
             <!-- Header elements -->
             <div>
@@ -52,6 +52,7 @@
             </div>
 
             <!-- Lists -->
+            <h3>Lists</h3>
             <div> 
                 <!-- Ordered List -->
                 <ol>
@@ -71,20 +72,64 @@
                 </ul>
             </div>
 
-            <!-- strong and em -->
+            <!-- strong and em (notice in the h3, to write <strong> as plain text, you need a code so you don't trigger the HTML renderer with < >)-->
+            <h3>&lt;strong&gt; and &lt;em&gt;</h3>
             <p>Here is some normal paragraph text. <strong>This is strong text.</strong></p>
             <p>Here is some more normal paragaph text. <em>This is some emphasised text.</em></p>
 
             <!-- Links -->
+            <h3>Links</h3>
             <p><a href="https://google.com">A link to Google</a></p>
             <p><a href="https://google.com" target="_blank">A link to Google that opens a new tab.</a></p>
         
             <!-- Images -->
+            <h3>Images</h3>
             <img src="https://place-hold.it/300x300" alt="This is a placeholder image.">
             <img src="images/image.jpg" alt="Croco" width="300">
+        
+            <!-- Tables (unstyled) -->
+            <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table -->
+            <h3>Tables</h3>
+            <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Breed</th>
+                  <th>Age</th>
+                </tr>
+                <tr>
+                  <td>Bowser</td>
+                  <td>Pitbull</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>Dash</td>
+                  <td>Beagle</td>
+                  <td>6</td>
+                </tr>
+              </table>
+
+            <!-- Tables (styled) -->
+            <table class="styledTable">
+                <tr>
+                  <th>Name</th>
+                  <th>Breed</th>
+                  <th>Age</th>
+                </tr>
+                <tr>
+                  <td>Bowser</td>
+                  <td>Pitbull</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>Dash</td>
+                  <td>Beagle</td>
+                  <td>6</td>
+                </tr>
+              </table>
+              
         </div>
         
 
     </body>
-    <p>OUTSIDE OF THE BODY! Don't do this! The browser is forgiving. The show must go on. But please be careful.</p>
+    <p>THIS ELEMENT IS OUTSIDE OF THE BODY! Don't do this! The browser is forgiving so it still seems to work... because the show must go on and the browser will make it work (like placing it back in the body element for you). But please be careful and avoid making this mistake.</p>
 </html>
