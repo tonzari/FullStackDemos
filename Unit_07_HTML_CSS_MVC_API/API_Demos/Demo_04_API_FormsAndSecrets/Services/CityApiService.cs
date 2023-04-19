@@ -43,7 +43,11 @@ namespace Demo_04_API_FormsAndSecrets.Services
             return result;
         }
 
-
+        /// <summary>
+        /// This method extracts the properties and values from the CitySearchModel object, constructs an API query string based on the given input parameters, and retrieves a list of cities that match the criteria.
+        /// </summary>
+        /// <param name="searchModel"></param>
+        /// <returns></returns>
         // See: https://stackoverflow.com/questions/66310813/parameterized-query-with-c-httpclient
         public async Task<List<City>> SearchByAnyParamater(CitySearchModel searchModel)
         {
