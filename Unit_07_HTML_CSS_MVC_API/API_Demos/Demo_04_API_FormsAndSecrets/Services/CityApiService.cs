@@ -99,7 +99,7 @@ namespace Demo_04_API_FormsAndSecrets.Services
                 string propertyName = property.Name;
 
                 // Get the property value
-                object propertyValue = property.GetValue(searchModel, null);
+                object propertyValue = property.GetValue(searchModel);
 
                 // Check if there's a value
                 if (propertyValue != null)
