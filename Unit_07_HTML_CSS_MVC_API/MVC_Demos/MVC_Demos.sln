@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_03_MVC_Forms_Validatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_04_MVC_EFC", "Demo_04_MVC_EFC\Demo_04_MVC_EFC.csproj", "{28BA9931-9BBF-4E43-A727-43F7BF72329A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_05_MVC_EFC_Db_First", "Demo_05_MVC_EFC_Db_First\Demo_05_MVC_EFC_Db_First.csproj", "{B45D6063-F0DD-437C-8F97-D784441E8770}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo_05_MVC_EFC_Db_First", "Demo_05_MVC_EFC_Db_First\Demo_05_MVC_EFC_Db_First.csproj", "{B45D6063-F0DD-437C-8F97-D784441E8770}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50629F09-B710-4BC3-86FF-F0E1D4D05803}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

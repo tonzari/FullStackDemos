@@ -6,12 +6,12 @@
  * to interact with it from our application, such as reading, writing, and editing that database.
  * 
  * First, create a SQL database. It can be as simple as you'd like.
- * Install the Nuget Package: Microsoft.EntityFrameworkCore.Design
+ * Install the Nuget Packages: Microsoft.EntityFrameworkCore.Design, .SqlServer, and .Tools
  * 
  * EXAMPLE CLI scaoffolding command:
- *      dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Chinook" Microsoft.EntityFrameworkCore.SqlServer
+ *      dotnet ef dbcontext scaffold "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DessertDb" Microsoft.EntityFrameworkCore.SqlServer
  * EXAMPLE Package Manager Console command:
- *      Scaffold-DbContext 'Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Chinook' Microsoft.EntityFrameworkCore.SqlServer
+ *      Scaffold-DbContext "Server=.\SQLExpress;Database=DessertDb;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
  * 
  */
 
@@ -22,6 +22,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// NEW CODE: add DessertDBContext as a service so it can be injected into controllers
 builder.Services.AddScoped<DessertDbContext>();
 
 var app = builder.Build();
