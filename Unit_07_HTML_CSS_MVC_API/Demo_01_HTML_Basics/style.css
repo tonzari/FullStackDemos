@@ -8,6 +8,10 @@
 
 */
 
+html {
+    background-color: #ddcccc;
+}
+
 /* Target all H1 elements. This will allow you to change *properties* of ALL h1 elements on your page*/
 h1 {
     font-size: 40px;
@@ -33,7 +37,8 @@ p {
 
 /* center the content wrapper */
 .site-wrapper {
-    background-color: #b8abab;
+    background-color: #f8f3f3;
+
     margin: 0 auto;
     padding: 25px;
     width: 800px;
@@ -50,7 +55,7 @@ p {
 }
 
 .styledTable, .styledTable th, .styledTable td {
-    border: 3px solid rgb(255, 255, 255);
+    border: 3px solid rgb(232, 232, 232);
 }
 
 .styledTable th,
@@ -58,12 +63,12 @@ p {
   padding: 15px 15px;
   border-top-width: 0;
   border-left-width: 0;
-  background-color: #e5e5e5;
+  background-color: #ffffff;
 }
 
 .styledTable th {
   position: sticky;
   top: 0;
-  background: #fff;
+  background: #e2e2e2;
   vertical-align: bottom;
 }
