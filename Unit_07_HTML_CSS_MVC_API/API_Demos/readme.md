@@ -1,4 +1,4 @@
-JSON 
+# JSON 
 
 Javascript Object Notation
 
@@ -41,7 +41,7 @@ API
 
 Microsoft docs: https://learn.microsoft.com/en-us/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client
 
-#Demo 04 API Forms and User Secrets
+# Demo 04 API Forms and User Secrets
 
 We will use this API: https://api-ninjas.com/api/city
 It requires an API key. Please visit the website and get an API key (for free).

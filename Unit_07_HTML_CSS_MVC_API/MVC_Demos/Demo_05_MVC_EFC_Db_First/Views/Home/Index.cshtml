@@ -1,14 +1,32 @@
 ﻿@model List<Dessert>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" target="_blank">HTML Table docs from Mozilla</a>
+<table>
 
-@foreach(Dessert d in Model)
-{
-    <div class="card custom-dessert-card">
-        <img src="https://picsum.photos/200" class="card-img-top" alt="...">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Price</th>
+        <th>Available</th>
+    </tr>
 
-        <div class="card-body">
-            <h3 class="card-title">@d.Name</h3>
-            <p class="card-text">@d.Type, <em>$@d.Price</em></p>
-        </div>
+    @foreach(Dessert d in Model)
+    {
 
-    </div>
-}
+        <tr>
+            <td>@d.Name</td>
+            <td>@d.Type</td>
+            <td>@d.Price</td>
+              
+            @if(!d.Available)
+            {
+                <td>Sold out!</td>
+            }
+            else
+            {
+                <td>Yes!</td>
+            }
+
+        </tr>
+    }
+
+</table>
