@@ -1,5 +1,7 @@
 ﻿@model List<Dessert>
+
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" target="_blank">HTML Table docs from Mozilla</a>
+
 <table>
 
     <tr>
@@ -8,6 +10,11 @@
         <th>Price</th>
         <th>Available</th>
     </tr>
+
+    @*
+        Note: We want to create a new ROW in the table for every dessert object in the list.
+              Notice how the foreach loops is inside the <table></table> element.
+    *@
 
     @foreach(Dessert d in Model)
     {

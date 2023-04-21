@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<AppUserRepository>();
+builder.Services.AddScoped<IAppUserRepository, AppUserRepository>(); // <----- Add the repository as a service here. AddScoped
+//builder.Services.AddScoped<IAppUserRepository, MockAppUserRepository>(); // <----- You can swap between the Mock repo and normal repo here! 
+
 builder.Services.AddControllersWithViews();
 
 
@@ -12,7 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppUserContext>(options =>
 {
     options.UseSqlServer(
-        builder.Configuration["ConnectionStrings:FromParallels"]);
+        builder.Configuration["ConnectionStrings:FromParallels"]); // <----- Make sure you are using the correct connection string. See your appsettings.json
 });
 
 

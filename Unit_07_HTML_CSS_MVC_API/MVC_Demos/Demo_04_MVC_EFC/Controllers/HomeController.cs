@@ -6,9 +6,9 @@ namespace Demo_04_MVC_EFC.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly AppUserRepository _AppUserRepo; // Another common pattern: this could be an interface, which would allow for easily swapping between a mock db and a real db
+    private readonly IAppUserRepository _AppUserRepo; // Another common pattern: this could be an interface, which would allow for easily swapping between a mock db and a real db
 
-    public HomeController(AppUserRepository appUserRepository)
+    public HomeController(IAppUserRepository appUserRepository)
     {
         _AppUserRepo = appUserRepository;
     }

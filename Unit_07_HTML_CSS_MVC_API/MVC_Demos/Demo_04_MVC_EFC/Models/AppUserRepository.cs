@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Demo_04_MVC_EFC.Models
 {
-	public class AppUserRepository
+	// WHY is there a repository class?
+	public class AppUserRepository : IAppUserRepository
 	{
 		private readonly AppUserContext _db;
 

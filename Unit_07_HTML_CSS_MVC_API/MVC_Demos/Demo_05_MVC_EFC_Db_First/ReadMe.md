@@ -61,3 +61,38 @@ Scaffold-DbContext "Server=.\SQLExpress;Database=DessertDb;Trusted_Connection=Tr
 ```
 You may need to change the name of the Server, and the Database.
 This command will create a DbContext class for you, and create model classes for your database tables.
+
+5. Now you can add your new context class (DessertDbContext) to Program.cs.
+```
+...
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+
+// NEW CODE: add DessertDBContext as a service so it can be injected into controllers
+builder.Services.AddScoped<DessertDbContext>();
+
+var app = builder.Build();
+...
+```
+
+6. Inject the context class into your controller's constructor.
+In the example code below, we are directly passing the DbSet of Desserts to the Index view.
+(Another option is to build a repository class that defines methods that provide access to the dbContext. See Demo 04 for that example. 
+For the sake of simplicity, we are just accessing the dbContext directly instead.)
+```
+    public class HomeController : Controller
+    {
+        private readonly DessertDbContext _db;
+
+        public HomeController(DessertDbContext db)
+        {
+            _db = db;
+        }
+
+        public IActionResult Index()
+        {
+            return View(_db.Desserts.ToList()); 
+        }
+    }
+```
