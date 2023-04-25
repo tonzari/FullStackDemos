@@ -14,7 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppUserContext>(options =>
 {
     options.UseSqlServer(
-        builder.Configuration["ConnectionStrings:FromParallels"]); // <----- Make sure you are using the correct connection string. See your appsettings.json
+        builder.Configuration["ConnectionStrings:AppUserContextConnection"]); // <----- Make sure you are using the correct connection string. See your appsettings.json
 });
 
 

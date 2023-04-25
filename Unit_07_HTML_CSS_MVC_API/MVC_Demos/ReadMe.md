@@ -63,7 +63,7 @@ In the package manager console, enter: `add-migration InitMigration` InitMigrati
 No database has been created yet! We only have the instructions at this point.
 
 6. Generate the database.
-In the package manager console, enter: `update-database`
+In the package manager console, enter: `update-database` This command will use the migration file instructions to actually create the database.
 
 7. Check your databases and make sure you see the database and the table(s) that EFC generated!
 

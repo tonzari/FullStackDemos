@@ -1,10 +1,11 @@
 ﻿# ASP.NET Web API // Demo 01 // Desserts API
 
 - Create a Dessert class/model.
-- Add dummy data (example desserts)
+- Add dummy data (example desserts). For simplicity, we can create a static list of desserts in the dessert model class.
 - Create a Dessert Controller.
 	- Right click Controllers folder, and choose: Add Controller...
 	- Make sure to choose the Web API Controller with Read/Write...
+	- The generated controller will provide basic read/write methods to help us get started.
 
 - Complete CRUD (Create, Read, Update, Delete) features so that the user can:
 	- View all Desserts

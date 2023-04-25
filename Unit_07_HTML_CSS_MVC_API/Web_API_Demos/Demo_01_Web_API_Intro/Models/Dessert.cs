@@ -17,7 +17,9 @@
             Available = available;
         }
 
-        // This will serve as our Mock database
+        // This will serve as our Mock database. This is a very simplified way of setting up some dummy data so we can practice Web API.
+        // In a more advanced scenario, you might create a custom class library that provides data models and database access.
+        // Because it is marked 'static', it is accessible to the rest of the application, and for example, can accessed like this: List<Desserts> allDesserts = Dessert.Desserts;
         public static List<Dessert> Desserts = new List<Dessert>
         {
             new Dessert(1, "Chocolate Cake", "Cake", 10.50m, true),
