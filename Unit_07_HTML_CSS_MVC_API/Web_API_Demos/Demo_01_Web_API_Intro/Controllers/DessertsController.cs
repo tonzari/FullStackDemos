@@ -33,15 +33,22 @@ namespace Demo_01_Web_API_Intro.Controllers
         [HttpGet("{id}")]
         public ActionResult<Dessert> Get(int id)
         {
-            Dessert result = Dessert.Desserts.FirstOrDefault(x => x.Id == id);
+            try
+            {
+                Dessert result = Dessert.Desserts.FirstOrDefault(x => x.Id == id);
 
-            if (result != null)
-            {
-                return Ok(result);
+                if (result is null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(result);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return NotFound();
+                return BadRequest();
             }
         }
 

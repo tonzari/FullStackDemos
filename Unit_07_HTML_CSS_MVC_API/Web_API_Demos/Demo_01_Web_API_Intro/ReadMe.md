@@ -1,7 +1,9 @@
 ﻿# ASP.NET Web API // Demo 01 // Desserts API
 
+Goals for this demo:
+
 - Create a Dessert class/model.
-- Add dummy data (example desserts). For simplicity, we can create a static list of desserts in the dessert model class.
+- Add dummy data (example desserts). For simplicity, we can create a static list of desserts in the dessert model class. (In a more sophisticated demo, we would createa data access class that implements an interface, and add that interface as a service to inject into the controllers. The data access class might even exist in its own class library.)
 - Create a Dessert Controller.
 	- Right click Controllers folder, and choose: Add Controller...
 	- Make sure to choose the Web API Controller with Read/Write...
@@ -42,17 +44,18 @@ And for `GET api/Desserts/5`, our goal is to provide a single dessert object, so
 But we have a potential problem. When we have a return type of `Dessert` or a list, or any other specific model, the response status is always 'OK'.
 In other words, someone may access `GET api/Desserts/123` but there is no dessert with an Id of 123. If our return type is `Dessert` the API will return a status of OK, and 204 No Content. 
 
-This may be preffered by some developers because it is a semantic response. But what if we want to return a different HTTP code? For example, a simple OK 200, or a Not Found 404?
-Search online for conversation on how to handle this situation. 
+The automaic 204 No Content response may be preffered by some developers because it is a semantic response. But what if we want to return a different HTTP code? For example, a simple OK 200, or a Not Found 404?
+(Search online for conversation on how to handle this situation, and check out the links below) 
 
 Here's an article on the topic of no record found at particular ID: https://apihandyman.io/move-along-no-resource-to-see-here-seriously-http-status-code-204-vs-403-vs-404-vs-410/
+
 Here's an article on the topic of returning empty lists: https://apihandyman.io/empty-lists-http-status-code-200-vs-204-vs-404/
 
-For this demo, I would like to return a 404 if a particular ID is not found. This is a different respone than the 204 that is being generated currently by our application.
+For this demo, I would like to return a 404 HTTP code if a particular ID is not found. This is a different respone than the 204 that is being generated currently by our application.
 To provide a 404 in the event that a specific ID is not found, a return type of `Dessert` will not do! We need a more flexible return type that can provide a proper HTTP response code depending on the possibly changing circumstances.
 
-We can make use of the return type `ActionResult`. We can wrap our desired return type of `Dessert` inside the ActionResult. See below.
-Then, we can return an `Ok()` and pass the object as an argument.
+We can make use of the return type `ActionResult`. ActionResult is very flexible and will allow us to return a variety of responses to fit different circumstances. We can wrap our desired return type of `Dessert` inside the ActionResult. See below.
+Then, we can return an `Ok()` if a Dessert was found, and return a `NotFound()` if a Dessert was not found.     
 
 ```
         // GET api/Desserts/5
@@ -61,18 +64,22 @@ Then, we can return an `Ok()` and pass the object as an argument.
         {
             Dessert result = Dessert.Desserts.FirstOrDefault(x => x.Id == id);
 
-            if (result != null)
+            if (result is null)
             {
-                return Ok(result);
+                return NotFound();
             }
             else
             {
-                return NotFound();
+                return Ok(result);
             }
         }
 ```
 
-Doesn't that read nicely? If we have a result (it isn't null), then tell the API consumer everything is OK! Otherwise, tell them it wasn't found.
+Doesn't that code read nicely? If we found a result, then tell the API consumer everything is OK! Otherwise, tell them it wasn't found. Reads almost like plain English. Sorta!
 
 ## Links / Other resources
 Youtube video tutorial (uses .NET 7 but still helpful): https://www.youtube.com/watch?v=V0UF4vEMlhQ
+
+Article on the topic of no record found at particular ID: https://apihandyman.io/move-along-no-resource-to-see-here-seriously-http-status-code-204-vs-403-vs-404-vs-410/
+
+Article on the topic of returning empty lists: https://apihandyman.io/empty-lists-http-status-code-200-vs-204-vs-404/
