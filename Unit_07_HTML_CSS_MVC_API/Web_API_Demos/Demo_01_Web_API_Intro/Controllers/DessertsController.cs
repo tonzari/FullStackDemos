@@ -24,17 +24,25 @@ namespace Demo_01_Web_API_Intro.Controllers
     {
         // GET: api/Desserts
         [HttpGet]
-        public List<Dessert> Get()
+        public ActionResult<List<Dessert>> Get()
         {
-            return Dessert.Desserts;
+            return Ok(Dessert.Desserts);
         }
 
         // GET api/Desserts/5
         [HttpGet("{id}")]
-        public Dessert Get(int id)
+        public ActionResult<Dessert> Get(int id)
         {
             Dessert result = Dessert.Desserts.FirstOrDefault(x => x.Id == id);
-            return result;
+
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         // POST api/Desserts
