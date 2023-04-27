@@ -24,29 +24,78 @@ namespace Demo_01_Web_API_Intro.Controllers
     {
         // GET: api/Desserts
         [HttpGet]
-        public List<Dessert> Get()
+        public ActionResult<List<Dessert>> Get()
         {
-            return Dessert.Desserts;
+            try
+            {
+                return Ok(Dessert.Desserts);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
 
         // GET api/Desserts/5
         [HttpGet("{id}")]
-        public Dessert Get(int id)
+        public ActionResult<Dessert> Get(int id)
         {
-            Dessert result = Dessert.Desserts.FirstOrDefault(x => x.Id == id);
-            return result;
+            try
+            {
+                Dessert result = Dessert.Desserts.FirstOrDefault(x => x.Id == id);
+
+                if (result is null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
 
         // POST api/Desserts
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<Dessert> Post(Dessert dessert)
         {
+            try
+            {
+                Dessert.Desserts.Add(dessert); // In this demo, we are simply adding our dessert to the static list of desserts, instead of adding and saving to a database.
+
+                Dessert savedDessert = Dessert.Desserts.First(d => d.Id == dessert.Id); // Making sure the dessert was actually saved
+
+                return Ok(savedDessert);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
 
         // PUT api/Desserts/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult<Dessert> Put(int id, [FromBody] string Name)
         {
+            throw new NotImplementedException();
+        }
+
+        // PUT api/Desserts/5
+        [HttpPatch("{id}")]
+        public ActionResult<Dessert> UpdateName(int id, [FromBody] string Name)
+        { 
+
+            if (Dessert.Desserts.Exists(d => d.Id == id))
+            {
+                Dessert.Desserts.First(d => d.Id == id).Name = Name;
+            }
+
+            return Ok(Dessert.Desserts.First(d => d.Id == id));
         }
 
         // DELETE api/Desserts/5
