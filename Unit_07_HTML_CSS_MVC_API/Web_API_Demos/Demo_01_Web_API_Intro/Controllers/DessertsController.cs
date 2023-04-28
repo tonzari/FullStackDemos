@@ -22,8 +22,8 @@ namespace Demo_01_Web_API_Intro.Controllers
     [ApiController]
     public class DessertsController : ControllerBase
     {
-        // GET: api/Desserts
-        [HttpGet]
+        // GET: api/Desserts/All
+        [HttpGet("All")]
         public ActionResult<List<Dessert>> Get()
         {
             try
@@ -78,24 +78,48 @@ namespace Demo_01_Web_API_Intro.Controllers
             }
         }
 
-        // PUT api/Desserts/5
-        [HttpPut("{id}")]
-        public ActionResult<Dessert> Put(int id, [FromBody] string Name)
+        // PUT api/Desserts/
+        [HttpPut]
+        public ActionResult<Dessert> Put(Dessert dessertToUpdate)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Dessert foundDessert = Dessert.Desserts.FirstOrDefault(d => d.Id == dessertToUpdate.Id);
+
+                // foundDessert = dessertToUpdate; // Will not work! Important topic! Reference types vs value types!
+
+                if (foundDessert is not null)
+                {
+                    foundDessert.Name = dessertToUpdate.Name;
+                    foundDessert.Price = dessertToUpdate.Price;
+                    foundDessert.Available = dessertToUpdate.Available;
+                    foundDessert.DessertType = dessertToUpdate.DessertType;
+
+                    return Ok(foundDessert);
+                }
+
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
 
-        // PUT api/Desserts/5
-        [HttpPatch("{id}")]
+        // PATCH api/Desserts/UpdateName/5
+        [HttpPatch("UpdateName/{id}")]
         public ActionResult<Dessert> UpdateName(int id, [FromBody] string Name)
-        { 
+        {
+            Dessert dessertToUpdate = Dessert.Desserts.FirstOrDefault(d => d.Id == id);
 
-            if (Dessert.Desserts.Exists(d => d.Id == id))
+            if (dessertToUpdate is not null)
             {
-                Dessert.Desserts.First(d => d.Id == id).Name = Name;
+                dessertToUpdate.Name = Name;
+                
+                return Ok(dessertToUpdate);
             }
 
-            return Ok(Dessert.Desserts.First(d => d.Id == id));
+            return NotFound();
         }
 
         // DELETE api/Desserts/5
