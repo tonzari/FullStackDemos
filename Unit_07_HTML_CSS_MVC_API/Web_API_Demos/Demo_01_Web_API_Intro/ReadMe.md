@@ -1,6 +1,8 @@
 ﻿# ASP.NET Web API // Demo 01 // Desserts API
 
-Goals for this demo:
+docs: https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio
+
+Goals/steps for this demo:
 
 - Create a Dessert class/model.
 - Add dummy data (example desserts). For simplicity, we can create a static list of desserts in the dessert model class. (In a more sophisticated demo, we would create a data access class that implements an interface, and add that interface as a service to inject into the controllers. The data access class might even exist in its own class library.)
