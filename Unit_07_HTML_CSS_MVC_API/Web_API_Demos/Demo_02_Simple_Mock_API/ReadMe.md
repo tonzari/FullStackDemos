@@ -3,9 +3,19 @@
 In this demo, we have another mock database (this time it is just a plain old class object, CafeDb.cs) which has some dummy data already entered.
 The CafeDb.cs is instantiated at the beginning of CafeController. We have added the mock database this way in interest of simplicity and time.
 	
-Return types in this demo are simply the actual objects that are being accessed. (Ex. List<MenuItems> )
-This simplified return type approach is what you can expect to find in the Mock Assessment and the real Assessment.
-Normally, you'd use a return type of ActionResult<YourObject> and because making calls to a real database takes time, you would want to use asynchronous code.
+Return types in this demo are simply the actual objects that are being accessed.
+
+For example,
+```
+		[HttpGet("AllMenuItems")]
+		public List<MenuItem> GetMenuItems()
+		{
+			return _cafeDb.MenuItems;
+		}
+```
+
+The simplified return type approach above is what you can expect to find in the Mock Assessment and the real Assessment.
+Outside of these assessments, normally you'd use a return type of `ActionResult<YourObject>` and because making calls to a real database takes time, you would want to use asynchronous code.
 
 For example, 
 ```
