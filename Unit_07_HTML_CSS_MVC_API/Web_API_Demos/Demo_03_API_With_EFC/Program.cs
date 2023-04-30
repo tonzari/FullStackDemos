@@ -5,7 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
+//    S T A R T    N E W    C O D E 
 builder.Services.AddScoped<CafeDbContext>();
+//     E N D       N E W    C O D E
 
 
 builder.Services.AddControllers();
