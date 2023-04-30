@@ -7,11 +7,11 @@ Return types in this demo are simply the actual objects that are being accessed.
 
 For example,
 ```
-		[HttpGet("AllMenuItems")]
-		public List<MenuItem> GetMenuItems()
-		{
-			return _cafeDb.MenuItems;
-		}
+	[HttpGet("AllMenuItems")]
+	public List<MenuItem> GetMenuItems()
+	{
+		return _cafeDb.MenuItems;
+	}
 ```
 
 The simplified return type approach above is what you can expect to find in the Mock Assessment and the real Assessment.
@@ -19,14 +19,14 @@ Outside of these assessments, normally you'd use a return type of `ActionResult<
 
 For example, 
 ```
-// GET: api/TodoItems
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
-    {
-        return await _context.TodoItems
-            .Select(x => ItemToDTO(x))
-            .ToListAsync();
-    }
+	GET: api/TodoItems
+	[HttpGet]
+	public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
+	{
+		return await _context.TodoItems
+			.Select(x => ItemToDTO(x))
+			.ToListAsync();
+	}
 ```
 
 ## Endpoints for this demo

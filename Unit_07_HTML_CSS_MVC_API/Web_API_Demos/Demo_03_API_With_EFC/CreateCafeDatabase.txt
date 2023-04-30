@@ -1,0 +1,24 @@
+﻿CREATE DATABASE CafeDb;
+
+USE CafeDb;
+
+CREATE TABLE Menu (
+    Id INT PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL
+);
+
+CREATE TABLE MenuItem (
+    Id INT PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL,
+    Description NVARCHAR(255) NOT NULL,
+    Category NVARCHAR(255) NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE Menu_MenuItem (
+    MenuId INT NOT NULL,
+    MenuItemId INT NOT NULL,
+    PRIMARY KEY (MenuId, MenuItemId),
+    FOREIGN KEY (MenuId) REFERENCES Menu(Id),
+    FOREIGN KEY (MenuItemId) REFERENCES MenuItem(Id)
+);
