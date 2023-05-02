@@ -20,10 +20,12 @@ namespace Demo_03_API_With_EFC.Controllers
         public ActionResult<Menu> AddItemToMenu(AddItemToMenuDto request)
         {
             // find the menu
-            Menu menu = _context.Menus
-                            .Where(m => m.Id == request.MenuId)
-                            .Include(m => m.MenuItems)
-                            .FirstOrDefault();
+            //Menu menu = _context.Menus
+            //                .Where(m => m.Id == request.MenuId)
+            //                .Include(m => m.MenuItems)
+            //                .FirstOrDefault();
+
+            Menu menu = _context.Menus.FirstOrDefault(m => m.Id == request.MenuId);
 
             if (menu is null)
             {

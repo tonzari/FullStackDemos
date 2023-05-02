@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 04 DOM Intro</title>
+</head>
+<body>
+    <div class="article">
+        <h1 id="title">DOM Intro</h1>
+        <h3 class="subtitle">Document Object Model</h3>
+        <p>The document object model is an interface which allows programs and scripts to dynamically access and update the content, style, and structure of a document.</p>
+        
+        <!-- to generate the list below   -->
+        <!-- ul>li*5>lorem4  -->
+
+        <ul>
+            <li>Lorem ipsum dolor sit.</li>
+            <li>Aliquid consequatur iste aut!</li>
+            <li>Corporis consequuntur rem sapiente?</li>
+            <li>Cum repellat neque totam!</li>
+            <li>Quisquam optio recusandae aut.</li>
+        </ul>
+    </div>
+
+    <script>   
+        //document.write("writes to the page");
+        
+        let p = document.createElement('p');
+        console.log(p);
+        p.innerText = "New text!";
+        document.body.append(p);
+
+        let title = document.getElementById('title');
+        console.log(title);
+        title.innerText = "The DOM Intro";
+
+        // let subtitle = document.getElementsByTagName('h3');
+        // subtitle[0].innerText = "The Document Object Model";
+
+        let subtitle = document.querySelectorAll(".subtitle");
+        console.log(subtitle);
+        subtitle[0].innerText = "The Document Object Model";
+
+    </script>
+</body>
+</html>
