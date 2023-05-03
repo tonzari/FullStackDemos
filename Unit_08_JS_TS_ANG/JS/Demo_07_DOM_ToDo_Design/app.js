@@ -46,6 +46,7 @@ todoSubmit.addEventListener('click',
         newTodo.classList.add("raised");
 
         newTodoP.innerText = todoInput.value;
+        todoInput.value = "";
 
         newTodo.appendChild(newTodoP);
         todoContainer.appendChild(newTodo);
