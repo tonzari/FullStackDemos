@@ -76,13 +76,12 @@ header h1 {
     transform: rotate(3deg);
 }
 
-.raised {
+.raised, .todo-item:hover {
     position: relative;
     top: -10px;
     filter: drop-shadow(.4rem .4rem .5rem rgba(7, 7, 7, 0.2));
 
-    transition: top .25s ease-out;
-    transition: filter .25s ease-out;
+    transition: all 0.1s ease-out;
 }
 
 .sticky-note-yellow { background-color: rgb(242, 242, 158); }
