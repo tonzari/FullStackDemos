@@ -3,6 +3,8 @@
 
 **/wwwroot/lib/
 
+*.vscode/
+
 
 ### Angular ###
 ## Angular ##
