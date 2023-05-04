@@ -122,3 +122,63 @@ const greet = (name: string): string => {
 
 console.log(add(2, 3), multiply(4, 5), greet("World"));
 ```
+
+## Classes
+
+### C#
+```csharp
+public class Person
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+
+    public Person(string firstName, string lastName)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+    }
+
+    public string GetFullName()
+    {
+        return $"{FirstName} {LastName}";
+    }
+}
+
+```
+
+### JavaScript
+```javascript
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+const person = new Person("John", "Doe");
+console.log(person.getFullName());
+```
+
+### TypeScript
+```typescript
+class Person {
+    firstName: string;
+    lastName: string;
+
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    getFullName(): string {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+const person: Person = new Person("John", "Doe");
+console.log(person.getFullName());
+```
