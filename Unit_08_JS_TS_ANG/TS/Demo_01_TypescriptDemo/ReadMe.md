@@ -182,3 +182,13 @@ class Person {
 const person: Person = new Person("John", "Doe");
 console.log(person.getFullName());
 ```
+
+## Links
+
+https://www.typescriptlang.org/play
+
+The Why/What/When/Where/Who of TypeScript: https://www.youtube.com/watch?v=i43W0XSiuIE
+
+https://learntypescript.dev/
+
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html
