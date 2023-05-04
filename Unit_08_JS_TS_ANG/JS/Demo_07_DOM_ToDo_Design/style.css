@@ -5,7 +5,6 @@ header {
     color: #222222;
     padding: 1em;
     width: 100%;
-
 }
 
 header h1 {
@@ -79,7 +78,7 @@ header h1 {
 .raised, .todo-item:hover {
     position: relative;
     top: -10px;
-    filter: drop-shadow(.4rem .4rem .5rem rgba(7, 7, 7, 0.2));
+    filter: drop-shadow(.4rem .4rem .2rem rgba(7, 7, 7, 0.2));
 
     transition: all 0.1s ease-out;
 }

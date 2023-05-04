@@ -30,6 +30,7 @@ todoSubmit.addEventListener('click',
         const newTodo = document.createElement('div');
         const newTodoP = document.createElement('h2');
 
+        // add the css class that causes the item to look like a sticky note
         newTodo.classList.add("todo-item");
 
         // Add slight random rotation
