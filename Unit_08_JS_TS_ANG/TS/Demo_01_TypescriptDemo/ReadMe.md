@@ -1,4 +1,19 @@
-# Typescript Introduction
+# TypeScript Key Points
+
+It's helpful to know some JavaScript before you start TypeScript. 
+
+**Why?**
+
+TypeScript is a 'superset' of JavaScript. That means TypeScript includes EVERYTHING from JavaScript, but expands upon it to provide extra features.
+
+**What extra features?**
+
+- Static types / Type Safety
+- Tooling (IDE debugging, color coding, analysis, detect unreachable code, etc.)
+- Interfaces, Modules, and other organizational features
+
+
+# TypeScript vs JS vs C#
 
 ## Variables
 Take note of how variables are declared in each language. C# requires you to declare the type, while Javascript omits the type. Typescript gives you the option of declaring a type.
