@@ -1,17 +1,19 @@
-﻿namespace Demo_03_Interface_Inventory.Models;
+﻿using Demo_03_Interface_Inventory.Interfaces;
 
-class UnedibleFood : Food
+namespace Demo_03_Interface_Inventory.Models;
+
+// This class is for food that is not in an edible state such as raw ingredients: salt, sugar, cooking oil, raw pork, etc.
+// It can however be "used", and for now that means "cooked"
+class UnedibleFood : Food, ICookable
 {
     public override Player Owner { get; set; }
 
-    public override string UseMessage => $"{Owner.PlayerName} added {ItemName} to soup"; // Just an example of how a raw ingredient could be "used" as it is not edible alone.
+    public override string UseMessage => $"{Owner.Name} added {ItemName} to soup"; // An example of how a raw ingredient could be "used" as it is not edible alone.
 
     public void Cook()
     {
-        Owner.PlayerActionLog.Add(UseMessage);
+        Owner.ActionLog.Add(UseMessage);
         Quantity--;
-
-        if (Quantity <= 0) Owner.Inventory.Remove(this);
     }
 
     public override string GetInfo()

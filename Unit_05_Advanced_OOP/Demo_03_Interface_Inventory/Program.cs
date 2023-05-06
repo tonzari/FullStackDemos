@@ -11,9 +11,9 @@ do
 
     Console.WriteLine("\nPlayer inventory - - - - - - - - - - - - - - - -\n");          // Print out full player Inventory
 
-    for (int i = 0; i < player.Inventory.Count; i++)
+    for (int i = 0; i < player.Inventory.AllItems.Count; i++)
     {
-        Console.Write(i + ". " + player.Inventory[i].GetInfo());
+        Console.Write(i + ". " + player.Inventory.AllItems[i].GetInfo());
 
         //if (player.Inventory[i] is IEdible) Console.Write(", (edible!)");               // Add a little message to notify player that the inventory item is edible (just to demonstrate C# 'variable is Type' syntax)
 
@@ -22,7 +22,7 @@ do
 
     Console.WriteLine("\nAction Log - - - - - - - - - - - - - - - - - - - -\n");        // Print out entire Player Action history
 
-    foreach (string playerAction in player.PlayerActionLog)
+    foreach (string playerAction in player.ActionLog)
     {
         Console.WriteLine(playerAction);
     }
@@ -31,9 +31,9 @@ do
     string userInput = Console.ReadLine();
     int userNum = int.Parse(userInput);
 
-    if (player.Inventory.Count > 0 && userNum < player.Inventory.Count)                // Only allow a number within the bounds of the Inventory list
+    if (player.Inventory.AllItems.Count > 0 && userNum < player.Inventory.AllItems.Count)                // Only allow a number within the bounds of the Inventory list
     {
-        var itemSelected = player.Inventory[userNum];
+        var itemSelected = player.Inventory.AllItems[userNum];
 
         itemSelected.Use();
     }

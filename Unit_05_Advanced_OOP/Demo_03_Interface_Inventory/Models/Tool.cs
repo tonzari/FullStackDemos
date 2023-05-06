@@ -6,13 +6,27 @@ class Tool : ICollectable
 {
     public Player Owner { get; set; }
     public string ItemName { get; set; }
-    public int Quantity { get; set; }
+
+    private int quantity;
+
+    public int Quantity
+    {
+        get { return quantity; }
+        set 
+        { 
+            quantity = value;
+
+            if (quantity <= 0) Owner.Inventory.AllItems.Remove(this);
+        }
+    }
+
+    public int EnergyConsumptionPerUse { get; set; } = 5;
 
     public float Durability { get; set; } = 1.0f;
 
     public float UseDamage { get; set; } = 0.05f;
 
-    public string UseMessage => $"{Owner.PlayerName} used {ItemName}";
+    public string UseMessage => $"{Owner.Name} used {ItemName}";
 
     public string GetInfo()
     {
@@ -23,7 +37,14 @@ class Tool : ICollectable
     {
         if (Quantity > 0)
         {
-            UseTool();
+            if (Owner.CurrentEnergyLevel >= EnergyConsumptionPerUse)
+            {
+                UseTool();
+            }
+            else
+            {
+                Denied();
+            } 
         }
     }
 
@@ -31,10 +52,15 @@ class Tool : ICollectable
     {
         Durability -= UseDamage;
 
+        Owner.CurrentEnergyLevel -= EnergyConsumptionPerUse;
+
         if (Durability < 0) Quantity--;
 
-        Owner.PlayerActionLog.Add(UseMessage);
+        Owner.ActionLog.Add(UseMessage);
+    }
 
-        if (Quantity <= 0) Owner.Inventory.Remove(this);
+    private void Denied()
+    {
+        Owner.ActionLog.Add($"Not enough energy to use {ItemName}");
     }
 }

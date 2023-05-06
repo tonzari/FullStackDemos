@@ -9,20 +9,21 @@ class EdibleFood : Food, IEdible
 
     public override string UseMessage
     {
-        get { return $"{Owner.PlayerName} ate {ItemName}"; }
+        get { return $"{Owner.Name} ate {ItemName}. Energy level is now {Owner.CurrentEnergyLevel}"; }
     }
 
     public void Eat()
     {
         Quantity--;
-        Owner.PlayerActionLog.Add(UseMessage);
+        Owner.CurrentEnergyLevel += this.EnergyProvided;
+        Owner.ActionLog.Add(UseMessage);
 
-        if (Quantity <= 0) Owner.Inventory.Remove(this);
+        if (Quantity <= 0) Owner.Inventory.AllItems.Remove(this);
     }
 
     public override string GetInfo()
     {
-        return $"{ItemName}, Quantity: {Quantity}, Energy: {EnergyProvided}";
+        return $"{ItemName}, Quantity: {Quantity}, Energy: {EnergyProvided}, (edible!)";
     }
 
     public override void Use()
