@@ -4,7 +4,7 @@ namespace Demo_03_Interface_Inventory.Interfaces;
 
 interface ICollectable
 {
-    Player Owner { get; set; }
+    IInventoryHolder Owner { get; set; }
     string ItemName { get; set; }
     string UseMessage { get; }
     int Quantity { get; set; }

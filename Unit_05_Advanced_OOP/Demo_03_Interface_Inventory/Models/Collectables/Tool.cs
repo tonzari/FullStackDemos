@@ -1,10 +1,10 @@
 ﻿using Demo_03_Interface_Inventory.Interfaces;
 
-namespace Demo_03_Interface_Inventory.Models;
+namespace Demo_03_Interface_Inventory.Models.Collectables;
 
-class Tool : ICollectable
+class Tool : ICollectable, IBreakable
 {
-    public Player Owner { get; set; }
+    public IInventoryHolder Owner { get; set; }
     public string ItemName { get; set; }
 
     private int quantity;
@@ -12,21 +12,48 @@ class Tool : ICollectable
     public int Quantity
     {
         get { return quantity; }
-        set 
-        { 
+        set
+        {
             quantity = value;
 
-            if (quantity <= 0) Owner.Inventory.AllItems.Remove(this);
+            if (quantity <= 0) Owner.Inventory.RemoveItem(this);
         }
     }
 
     public int EnergyConsumptionPerUse { get; set; } = 5;
 
-    public float Durability { get; set; } = 1.0f;
 
-    public float UseDamage { get; set; } = 0.05f;
+    private float durability = 1.0f;
+    public float Durability
+    {
+        get
+        {
+            return durability;
+        }
+        set
+        {
+            durability = value;
 
-    public string UseMessage => $"{Owner.Name} used {ItemName}";
+            if (durability < 0) Quantity--;
+        }
+    }
+
+    public float UseDamage { get; set; } = 0.1f;
+
+    public string UseMessage
+    {
+        get
+        {
+            if (durability < 0)
+            {
+                return BreakMessage;
+            }
+
+            return $"{Owner.Name} used {ItemName}";
+        }
+    }
+
+    public string BreakMessage => $"{Owner.Name} broke {ItemName}";
 
     public string GetInfo()
     {
@@ -43,8 +70,8 @@ class Tool : ICollectable
             }
             else
             {
-                Denied();
-            } 
+                DenyUse();
+            }
         }
     }
 
@@ -54,12 +81,10 @@ class Tool : ICollectable
 
         Owner.CurrentEnergyLevel -= EnergyConsumptionPerUse;
 
-        if (Durability < 0) Quantity--;
-
         Owner.ActionLog.Add(UseMessage);
     }
 
-    private void Denied()
+    private void DenyUse()
     {
         Owner.ActionLog.Add($"Not enough energy to use {ItemName}");
     }

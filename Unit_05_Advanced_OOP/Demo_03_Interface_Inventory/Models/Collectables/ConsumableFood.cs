@@ -1,24 +1,24 @@
 ﻿using Demo_03_Interface_Inventory.Interfaces;
 
-namespace Demo_03_Interface_Inventory.Models;
+namespace Demo_03_Interface_Inventory.Models.Collectables;
 
-class EdibleFood : Food, IEdible
+class ConsumableFood : Food, IEdible
 {
 
-    public override Player Owner { get; set; }
+    public override IInventoryHolder Owner { get; set; }
 
     public override string UseMessage
     {
-        get { return $"{Owner.Name} ate {ItemName}. Energy level is now {Owner.CurrentEnergyLevel}"; }
+        get { return $"{Owner.Name} ate {ItemName}"; }
     }
 
     public void Eat()
     {
         Quantity--;
-        Owner.CurrentEnergyLevel += this.EnergyProvided;
+        Owner.CurrentEnergyLevel += EnergyProvided;
         Owner.ActionLog.Add(UseMessage);
 
-        if (Quantity <= 0) Owner.Inventory.AllItems.Remove(this);
+        if (Quantity <= 0) Owner.Inventory.RemoveItem(this);
     }
 
     public override string GetInfo()

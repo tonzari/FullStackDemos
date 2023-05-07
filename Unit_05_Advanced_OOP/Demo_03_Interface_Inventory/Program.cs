@@ -8,16 +8,11 @@ Player player = new Player(userName);
 do
 {
     Console.Clear();
-
-    Console.WriteLine("\nPlayer inventory - - - - - - - - - - - - - - - -\n");          // Print out full player Inventory
-
-    for (int i = 0; i < player.Inventory.AllItems.Count; i++)
+    Console.WriteLine("\nPlayer inventory - - - - - - - - - - - - - - - -");          // Print out full player Inventory
+    Console.WriteLine("\nPlayer Energy: " + player.CurrentEnergyLevel + "\n");
+    for (int i = 0; i < player.Inventory.GetAllItems().Count; i++)
     {
-        Console.Write(i + ". " + player.Inventory.AllItems[i].GetInfo());
-
-        //if (player.Inventory[i] is IEdible) Console.Write(", (edible!)");               // Add a little message to notify player that the inventory item is edible (just to demonstrate C# 'variable is Type' syntax)
-
-        Console.WriteLine();
+        Console.Write(i + 1 + ". " + player.Inventory.GetAllItems()[i].GetInfo() + "\n");
     }
 
     Console.WriteLine("\nAction Log - - - - - - - - - - - - - - - - - - - -\n");        // Print out entire Player Action history
@@ -29,11 +24,11 @@ do
 
     Console.WriteLine("\nSelect an item in your inventory by number, and hit [enter] to use it: ");
     string userInput = Console.ReadLine();
-    int userNum = int.Parse(userInput);
+    int userNum = int.Parse(userInput) - 1;
 
-    if (player.Inventory.AllItems.Count > 0 && userNum < player.Inventory.AllItems.Count)                // Only allow a number within the bounds of the Inventory list
+    if (player.Inventory.GetAllItems().Count > 0 && userNum < player.Inventory.GetAllItems().Count)                // Only allow a number within the bounds of the Inventory list
     {
-        var itemSelected = player.Inventory.AllItems[userNum];
+        var itemSelected = player.Inventory.GetAllItems()[userNum];
 
         itemSelected.Use();
     }

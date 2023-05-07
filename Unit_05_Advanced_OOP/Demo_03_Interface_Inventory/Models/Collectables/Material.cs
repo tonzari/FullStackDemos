@@ -1,9 +1,10 @@
 ﻿using Demo_03_Interface_Inventory.Interfaces;
 
-namespace Demo_03_Interface_Inventory.Models;
+namespace Demo_03_Interface_Inventory.Models.Collectables;
 
 class Material : ICollectable
 {
+    public IInventoryHolder Owner { get; set; }
     public string ItemName { get; set; }
     private int quantity;
     public int Quantity
@@ -12,11 +13,10 @@ class Material : ICollectable
         set
         {
             quantity = value;
-            if (Quantity <= 0) Owner.Inventory.AllItems.Remove(this);
+
+            if (Quantity <= 0) Owner.Inventory.RemoveItem(this);
         }
     }
-
-    public Player Owner { get; set; }
 
     public string UseMessage => $"{Owner.Name} built something with {ItemName}";
 
@@ -25,7 +25,7 @@ class Material : ICollectable
         Quantity--;
         Owner.ActionLog.Add(UseMessage);
 
-        if (Quantity <= 0) Owner.Inventory.AllItems.Remove(this);
+        if (Quantity <= 0) Owner.Inventory.RemoveItem(this);
     }
 
     public void Use()

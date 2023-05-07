@@ -1,10 +1,10 @@
 ﻿using Demo_03_Interface_Inventory.Interfaces;
 
-namespace Demo_03_Interface_Inventory.Models;
+namespace Demo_03_Interface_Inventory.Models.Collectables;
 
 abstract class Food : ICollectable
 {
-    public abstract Player Owner { get; set; }
+    public abstract IInventoryHolder Owner { get; set; }
     public int EnergyProvided { get; set; }
     public string ItemName { get; set; }
     private int quantity;
@@ -12,11 +12,11 @@ abstract class Food : ICollectable
     public int Quantity
     {
         get { return quantity; }
-        set 
-        { 
+        set
+        {
             quantity = value;
 
-            if (quantity <= 0) Owner.Inventory.AllItems.Remove(this);
+            if (quantity <= 0) Owner.Inventory.RemoveItem(this);
         }
     }
 
