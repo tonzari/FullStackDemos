@@ -1,18 +1,18 @@
 ﻿using Demo_03_Interface_Inventory.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace Demo_03_Interface_Inventory.Models;
 
 class Player: IInventoryHolder
 {
-    public List<string> ActionLog { get; set; }       
-    public Inventory Inventory { get; set; }
+    public List<string> ActionLog { get; set; } = new List<string>();
+    public Inventory Inventory { get; set; } = new Inventory();
     public string Name { get; set; }
     public int CurrentEnergyLevel { get; set; }
 
     public Player(string playerName)
     {
         Name = playerName;
-        Inventory = new Inventory(this);
-        ActionLog = new List<string>();
+        Inventory.Owner = this;
     }
 }

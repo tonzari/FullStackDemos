@@ -1,0 +1,29 @@
+h2 {
+    color: rgb(10,100,200);
+}
+
+.article-container {
+    width: 60%;
+    margin: 5em auto;
+}
+
+.article-excerpt {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.05em;
+    line-height: 1.8em;
+}
+.article-credits {
+    color: rgb(109, 131, 156);
+}
+
+button {
+    background-color: #EDEDED;
+    border-style: none;
+    color: rgb(10,100,200);
+    font-weight: 700;
+    margin: 0.2em 0;
+    padding: 0.8em;
+    cursor: pointer;
+    text-transform: uppercase;
+}

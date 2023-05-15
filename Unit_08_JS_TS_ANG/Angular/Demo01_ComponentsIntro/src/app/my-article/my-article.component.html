@@ -1,0 +1,41 @@
+<h2>{{articleTitle}}</h2>
+
+<!-- How to loop through an array in Angular -->
+<!-- Built-in Structural directives: ngIf, ngFor -->
+
+<ng-container *ngIf="!testBool">
+    <h2>H2 inside ng-container</h2>
+    <p>sdfasdf</p>
+    <ul>
+        <li>
+            asd
+        </li>
+        <li>
+            asd
+        </li>
+        <li>
+            asd
+        </li>
+    </ul>
+</ng-container>
+
+<div *ngIf="!testBool">
+    <h2>H2 inside div</h2>
+    <p>sdfasdf</p>
+    <ul>
+        <li>
+            asd
+        </li>
+        <li>
+            asd
+        </li>
+        <li>
+            asd
+        </li>
+    </ul>
+</div>
+
+<p *ngFor="let pa of articleContent">{{pa}}</p>
+
+
+<app-read-more-button></app-read-more-button>

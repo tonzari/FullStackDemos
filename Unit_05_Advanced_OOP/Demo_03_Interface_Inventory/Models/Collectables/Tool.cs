@@ -34,7 +34,11 @@ class Tool : ICollectable, IBreakable
         {
             durability = value;
 
-            if (durability < 0) Quantity--;
+            if (durability < 0)
+            {
+                Quantity--;
+                durability = 1.0f;
+            }
         }
     }
 
