@@ -1,12 +1,12 @@
-<h1>Blog</h1>
+<h1 class="page-title">Blog</h1>
 
 <!-- built in structural directives: ngIf, ngFor -->
 
 <ng-container *ngIf="articles.length">
-    <div *ngFor="let article of articles">
+    <div class="article-container" *ngFor="let article of articles">
         <h2>{{article.title}}</h2>
-        <p>By {{article.author}}, <span>{{ article.date | date }}</span></p>
-        <p>{{article.excerpt}}</p>
+        <p class="article-credits">By {{article.author}}, <span>{{ article.date | date }}</span></p>
+        <p class="article-excerpt">{{article.excerpt}}</p>
         <button>Read more</button>
     </div>
 </ng-container>
