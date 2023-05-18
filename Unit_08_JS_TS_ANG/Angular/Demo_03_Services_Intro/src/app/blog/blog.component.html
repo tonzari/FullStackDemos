@@ -1,8 +1,15 @@
 <h1 class="page-title">Blog</h1>
 
-<div class="article-container" *ngFor="let article of articles">
-    <h2>{{article.title}}</h2>
-    <p class="article-credits">By {{article.author}}, <span>{{article.date | date }}</span></p>
-    <p class="article-excerpt">{{article.excerpt}}</p>
-    <button>Read more</button>
+<div class="blog-container">
+    <!-- https://angular.io/guide/template-reference-variables -->
+    <input #search (keyup)="filterArticles(search.value)" type="text" placeholder="search articles..." id="search-bar">
+    
+    <!-- <button (click)="testClick()">Temp button</button> -->
+    
+    <div class="article-container" *ngFor="let article of results">
+        <h2>{{article.title}}</h2>
+        <p class="article-credits">By {{article.author}}, <span>{{article.date | date }}</span></p>
+        <p class="article-excerpt">{{article.excerpt}}</p>
+        <button>Read more</button>
+    </div>
 </div>
