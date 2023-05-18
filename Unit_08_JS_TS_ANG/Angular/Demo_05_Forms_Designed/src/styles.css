@@ -1,0 +1,29 @@
+html, body {
+    margin: 0; 
+    padding: 0; 
+}
+
+h1, h2, h3, h4, h5, h5, button { 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p, table, label, input {
+    font-family:'Courier New', Courier, monospace;
+}
+
+table {
+    text-align: left;
+}
+
+th, td {
+    padding: 0.3rem 1rem;
+}
+
+tr:nth-child(n) {
+    background-color: rgba(230,150,150,0.2);
+}
+
+button {
+    margin: 1rem 0;
+    padding: 0.5rem;
+}

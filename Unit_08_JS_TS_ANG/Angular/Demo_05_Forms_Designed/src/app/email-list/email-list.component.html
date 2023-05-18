@@ -1,0 +1,18 @@
+<ng-container *ngIf="emailList.length > 0;else list">
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email Address</th>
+        </tr>
+        <tr *ngFor="let user of emailList">
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </table>
+</ng-container>
+
+<ng-template #list>
+    <p>Sorry, no users were found in the email list.</p>
+</ng-template>

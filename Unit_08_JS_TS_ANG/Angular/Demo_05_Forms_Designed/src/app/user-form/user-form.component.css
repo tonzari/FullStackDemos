@@ -1,0 +1,9 @@
+form {
+    display: grid;
+}
+
+form div {
+    display: grid;
+
+    grid-template-columns: 25% 75%;
+}
