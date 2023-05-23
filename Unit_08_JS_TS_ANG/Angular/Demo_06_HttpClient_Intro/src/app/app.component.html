@@ -1,0 +1,29 @@
+
+<div>
+  <h1>HttpClient Intro</h1>
+  <p>Welcome!</p>
+  <p>If you make a successful HTTP request, an image will appear!</p>
+  <ul>
+    <li>GET diplays an otter!</li>
+    <li>POST displays an ajolote!</li>
+    <li>DELETE display a shoebill stork!</li>
+  </ul>
+</div>
+
+<button (click)="sendGetRequest()">Send Get Request</button>
+<br>
+<button (click)="sendPostRequest(postString.value)">Send Post Request</button>
+<input type="text" #postString placeholder="post text...">
+<br>
+<button (click)="sendDeleteRequest()">Send Delete Request</button>
+
+
+
+<ng-container *ngIf="requestType">
+  <div>
+    <h2>{{requestType}}</h2>
+    <div><img width="350" src="{{imageUrl}}" alt=""></div>
+  </div>
+</ng-container>
+
+<router-outlet></router-outlet>
