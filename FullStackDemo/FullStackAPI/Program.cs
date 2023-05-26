@@ -1,13 +1,19 @@
+using FullStackAPI.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<FullStackDemoContext>();
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: "LocalOriginsPolicy",
-        builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
-    );
-}
+// Add Cors policy
+builder.Services.AddCors(
+    options =>
+    {
+        options.AddPolicy(
+            name: "AllowAny",
+            builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+            );
+    }
 );
 
 builder.Services.AddControllers();
@@ -24,7 +30,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("LocalOriginsPolicy");
+app.UseCors("AllowAny");
 
 app.UseHttpsRedirection();
 
