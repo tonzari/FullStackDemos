@@ -2,6 +2,11 @@
 
 ![Full Stack Demo Illustration](FullStackGamePlan.png)
 
+## Secret class recording link!
+
+Download video here: https://drive.google.com/file/d/1D386wMBjvln-NDpyC1-aVjXktWQ0AL1F/view?usp=sharing
+(Please do not share!)
+
 ## What? 
 
 A full stack demo built with the following tech:
